@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  phoenix_test_postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: phoenix_test_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
