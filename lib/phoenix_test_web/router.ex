@@ -20,6 +20,14 @@ defmodule PhoenixTestWeb.Router do
     get "/", PageController, :home
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    get "/users", UsersController, :index  # Directly referencing UsersController
+    get "/users/new", UsersController, :new
+    post "/users", UsersController, :create
+    get "/users/:id", UsersController, :show
+    get "/users/:id/edit", UsersController, :edit
+    patch "/users/:id", UsersController, :update
+    put "/users/:id", UsersController, :update
+    delete "/users/:id", UsersController, :delete
   end
 
   # Other scopes may use custom stacks.
