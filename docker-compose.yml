@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  phoenix_test_app:
+    build: .
+    environment:
+      DATABASE_URL: "ecto://postgres:123456@phoenix_test_postgres/phoenix_test_dev"
+    command: /bin/sh docker_dev_start.sh
+    depends_on:
+      - phoenix_test_postgres
+    ports:
+      - "4000:4000"
+
   phoenix_test_postgres:
     image: postgres
     environment:
